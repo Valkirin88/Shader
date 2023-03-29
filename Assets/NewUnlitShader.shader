@@ -2,12 +2,7 @@ Shader "Unlit/NewUnlitShader"
 {
     Properties
     {
-        //_Tex1("Texture1", 2D) = "white" {}
-        //_Tex2("Texture2", 2D) = "white" {}
-        //_MixValue("Mix Value", Range(0,1)) = 0.5
         _Color("Main Color", COLOR) = (1,1,1,1)
-
-
         _MainTex ("Texture", 2D) = "White" {}
         _Height("Height", Range(-20,20)) = 0.5
     }
@@ -50,7 +45,6 @@ Shader "Unlit/NewUnlitShader"
             {
                 v2f o;
 
-              //  v.vertex.xyz -= v.normal * _Height * v.uv.x * v.uv.x * v.uv.x;
                 v.vertex.y += sin(v.uv.x * _Height)*2;
 
                 o.vertex = UnityObjectToClipPos(v.vertex);
